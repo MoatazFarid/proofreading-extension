@@ -1,0 +1,54 @@
+.text-improver-tooltip {
+    position: fixed;
+    z-index: 10000;
+    background: white;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    padding: 10px;
+    max-width: 300px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+    line-height: 1.4;
+}
+
+.text-improver-tooltip .content {
+    margin-bottom: 10px;
+    white-space: pre-wrap;
+    word-break: break-word;
+}
+
+.text-improver-tooltip .actions {
+    display: flex;
+    justify-content: space-between;
+    border-top: 1px solid #eee;
+    padding-top: 8px;
+}
+
+.text-improver-tooltip button {
+    padding: 4px 8px;
+    border: none;
+    border-radius: 3px;
+    background: #4CAF50;
+    color: white;
+    cursor: pointer;
+    font-size: 12px;
+}
+
+.text-improver-tooltip button:hover {
+    background: #45a049;
+}
+
+.text-improver-tooltip .close {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    cursor: pointer;
+    color: #666;
+    font-size: 16px;
+    line-height: 1;
+}
+
+.text-improver-tooltip .close:hover {
+    color: #000;
+} 

@@ -11,7 +11,8 @@ const copyPatterns = [
     { from: "popup/popup.html" },
     { from: "popup/popup.css" },
     { from: "options/options.html" },
-    { from: "options/options.css" }
+    { from: "options/options.css" },
+    { from: "styles/tooltip.css", to: "styles/tooltip.css" }
 ];
 
 // Add icons pattern if directory exists
