@@ -9,6 +9,11 @@ A Chrome extension that uses OpenAI's GPT-3.5 to improve selected text while mai
 - Simple configuration interface
 - Secure API key storage
 - Rate limiting to prevent excessive API usage
+- Floating, draggable tooltip interface
+- Copy to clipboard functionality
+- Replace original text option
+- Dark mode support
+- Responsive and accessible design
 
 ## Installation
 
@@ -50,7 +55,12 @@ Then load the `dist` folder as an unpacked extension in Chrome.
 1. Select any text on a webpage
 2. Right-click the selected text
 3. Choose "Improve Text" from the context menu
-4. Wait for the improved version to appear
+4. A tooltip will appear with the improved text
+5. You can:
+    - Copy the improved text to clipboard
+    - Replace the original text with the improved version
+    - Drag the tooltip to a different position
+    - Close the tooltip when done
 
 ## Development
 
@@ -71,6 +81,8 @@ chrome-extension/
 ├── utils/          # Utility functions
 │   ├── debug.js
 │   └── storage.js
+├── styles/         # Shared styles
+│   └── tooltip.css
 └── icons/         # Extension icons
 ```
 
@@ -103,6 +115,10 @@ npm test:coverage
 - Uses OpenAI's Chat Completion API
 - Implements rate limiting and error handling
 - Secure API key storage using Chrome's storage API
+- Modern CSS with animations and transitions
+- Responsive design with dark mode support
+- Drag and drop functionality
+- Clipboard API integration
 
 ## Security
 
@@ -110,6 +126,8 @@ npm test:coverage
 - No data is stored except the last improvement
 - All communication with OpenAI is done via HTTPS
 - Content script runs in isolated world
+- CSP compliant
+- No external dependencies for UI
 
 ## Contributing
 
@@ -118,6 +136,13 @@ npm test:coverage
 3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
 4. Push to the branch (`git push origin MoatazFarid/proofreading-extension`)
 5. Open a Pull Request
+
+## Browser Support
+
+- Chrome 88+
+- Edge 88+ (Chromium-based)
+- Opera 74+
+- Brave
 
 ## Requirements
 
@@ -138,4 +163,13 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ## Support
 
-For support, please open an issue in the GitHub repository. 
+For support, please open an issue in the GitHub repository.
+
+## Roadmap
+
+- [ ] Multiple language support
+- [ ] Custom styling options
+- [ ] Keyboard shortcuts
+- [ ] History of improvements
+- [ ] Export/import settings
+- [ ] Additional GPT models

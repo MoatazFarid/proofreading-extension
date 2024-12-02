@@ -1,54 +1,140 @@
 .text-improver-tooltip {
     position: fixed;
     z-index: 10000;
-    background: white;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    padding: 10px;
-    max-width: 300px;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.15);
-    font-family: Arial, sans-serif;
+    background: #ffffff;
+    border: none;
+    border-radius: 8px;
+    padding: 16px;
+    min-width: 280px;
+    max-width: 400px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
     font-size: 14px;
-    line-height: 1.4;
+    line-height: 1.5;
+    transition: all 0.2s ease;
+    opacity: 0;
+    transform: translateY(10px);
+    animation: tooltipFadeIn 0.2s ease forwards;
+}
+
+@keyframes tooltipFadeIn {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 .text-improver-tooltip .content {
-    margin-bottom: 10px;
+    margin-bottom: 12px;
     white-space: pre-wrap;
     word-break: break-word;
+    color: #2c3e50;
+    max-height: 300px;
+    overflow-y: auto;
+    padding-right: 8px;
+    scrollbar-width: thin;
+    scrollbar-color: #4CAF50 #f0f0f0;
+}
+
+.text-improver-tooltip .content::-webkit-scrollbar {
+    width: 6px;
+}
+
+.text-improver-tooltip .content::-webkit-scrollbar-track {
+    background: #f0f0f0;
+    border-radius: 3px;
+}
+
+.text-improver-tooltip .content::-webkit-scrollbar-thumb {
+    background: #4CAF50;
+    border-radius: 3px;
 }
 
 .text-improver-tooltip .actions {
     display: flex;
-    justify-content: space-between;
-    border-top: 1px solid #eee;
-    padding-top: 8px;
+    justify-content: flex-end;
+    gap: 8px;
+    border-top: 1px solid #edf2f7;
+    padding-top: 12px;
+    margin-top: 8px;
 }
 
 .text-improver-tooltip button {
-    padding: 4px 8px;
+    padding: 6px 12px;
     border: none;
-    border-radius: 3px;
+    border-radius: 6px;
     background: #4CAF50;
     color: white;
     cursor: pointer;
-    font-size: 12px;
+    font-size: 13px;
+    font-weight: 500;
+    transition: all 0.2s ease;
+    display: flex;
+    align-items: center;
+    gap: 4px;
 }
 
 .text-improver-tooltip button:hover {
     background: #45a049;
+    transform: translateY(-1px);
+    box-shadow: 0 2px 4px rgba(76, 175, 80, 0.2);
+}
+
+.text-improver-tooltip button:active {
+    transform: translateY(0);
 }
 
 .text-improver-tooltip .close {
     position: absolute;
-    top: 5px;
-    right: 5px;
+    top: 8px;
+    right: 8px;
     cursor: pointer;
-    color: #666;
-    font-size: 16px;
+    color: #a0aec0;
+    font-size: 18px;
     line-height: 1;
+    width: 24px;
+    height: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    transition: all 0.2s ease;
 }
 
 .text-improver-tooltip .close:hover {
-    color: #000;
+    color: #2d3748;
+    background: #f7fafc;
+}
+
+.text-improver-tooltip.error {
+    border-left: 4px solid #e53e3e;
+}
+
+.text-improver-tooltip.success {
+    border-left: 4px solid #4CAF50;
+}
+
+/* Dark mode support */
+@media (prefers-color-scheme: dark) {
+    .text-improver-tooltip {
+        background: #1a202c;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+    }
+
+    .text-improver-tooltip .content {
+        color: #e2e8f0;
+    }
+
+    .text-improver-tooltip .actions {
+        border-top-color: #2d3748;
+    }
+
+    .text-improver-tooltip .close {
+        color: #718096;
+    }
+
+    .text-improver-tooltip .close:hover {
+        color: #e2e8f0;
+        background: #2d3748;
+    }
 } 
