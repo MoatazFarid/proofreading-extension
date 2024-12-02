@@ -1,0 +1,20 @@
+/* Basic styling */
+body {
+    width: 300px;
+    padding: 10px;
+}
+
+.error {
+    color: red;
+    display: none;
+}
+
+#loading {
+    color: #666;
+    font-style: italic;
+}
+
+#result {
+    margin-top: 10px;
+    white-space: pre-wrap;
+} 

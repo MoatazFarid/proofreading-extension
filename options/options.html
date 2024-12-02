@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Text Improver Settings</title>
+    <link rel="stylesheet" href="options.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Text Improver Settings</h1>
+        <div class="form-group">
+            <label for="apiKey">OpenAI API Key:</label>
+            <input type="password" id="apiKey" placeholder="Enter your API key">
+        </div>
+        <div class="form-group">
+            <label for="model">GPT Model:</label>
+            <select id="model">
+                <option value="gpt-3.5-turbo">GPT-3.5 Turbo</option>
+            </select>
+        </div>
+        <button id="saveBtn">Save Settings</button>
+        <button id="testBtn">Test Storage</button>
+        <div id="status"></div>
+    </div>
+    <script src="options.js" type="module"></script>
+</body>
+</html> 
