@@ -137,4 +137,21 @@
         color: #e2e8f0;
         background: #2d3748;
     }
+}
+
+.text-improver-tooltip[data-action="improve"] {
+    border-left-color: #4CAF50;
+}
+
+.text-improver-tooltip[data-action="professional"] {
+    border-left-color: #2196F3;
+}
+
+.text-improver-tooltip[data-action="proofread"] {
+    border-left-color: #FF9800;
+}
+
+.text-improver-tooltip[data-action="toArabic"],
+.text-improver-tooltip[data-action="toEnglish"] {
+    border-left-color: #9C27B0;
 } 

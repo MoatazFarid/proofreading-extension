@@ -1,12 +1,21 @@
 # Text Improver Chrome Extension
 
-A Chrome extension that uses OpenAI's GPT-3.5 to improve selected text while maintaining its original meaning.
+A Chrome extension that uses OpenAI's GPT-3.5 to enhance text with multiple improvement options.
 
 ## Features
 
-- Right-click menu integration for text improvement
+- Multiple text enhancement options:
+  - ✨ Improve Text - Enhances writing while maintaining meaning
+  - 📨 Convert to E-mail - Transforms text into professional email format
+  - 📝 Proofread Only - Corrects grammar, spelling, and punctuation
+  - 🔄 Translate to Arabic - Translates text to Arabic
+  - 🔄 Translate to English - Translates text to English
 - OpenAI GPT-3.5 Turbo powered text enhancement
-- Simple configuration interface
+- Interactive floating tooltip interface:
+  - Draggable positioning
+  - Copy to clipboard
+  - Replace original text
+  - Color-coded actions
 - Secure API key storage
 - Rate limiting to prevent excessive API usage
 - Floating, draggable tooltip interface
@@ -53,14 +62,25 @@ Then load the `dist` folder as an unpacked extension in Chrome.
 ## Usage
 
 1. Select any text on a webpage
-2. Right-click the selected text
-3. Choose "Improve Text" from the context menu
+2. Right-click and hover over "Text Improver"
+3. Choose from available options:
+  - "Improve Text" for general enhancement
+  - "Convert to E-mail" for professional email format
+  - "Proofread Only" for grammar and spelling
+  - "Translate to Arabic" for English to Arabic translation
+  - "Translate to English" for Arabic to English translation
 4. A tooltip will appear with the improved text
 5. You can:
     - Copy the improved text to clipboard
     - Replace the original text with the improved version
     - Drag the tooltip to a different position
     - Close the tooltip when done
+
+Each action has its own color-coded indicator for easy identification:
+- 🟢 Green: Text Improvement
+- 🔵 Blue: Email Conversion
+- 🟠 Orange: Proofreading
+- 🟣 Purple: Translation
 
 ## Development
 
@@ -172,4 +192,11 @@ For support, please open an issue in the GitHub repository.
 - [ ] Keyboard shortcuts
 - [ ] History of improvements
 - [ ] Export/import settings
-- [ ] Additional GPT models
+- [ ] Additional text enhancement options:
+  - [ ] Summarize text
+  - [ ] Change tone (formal/casual)
+  - [ ] Convert to different formats
+  - [ ] Custom prompts
+- [ ] Language detection
+- [ ] Batch processing
+- [ ] Context-aware improvements

@@ -24,12 +24,13 @@ chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
 });
 
 // Add tooltip functionality
-function createTooltip(text, position) {
+function createTooltip(text, position, action) {
     // Remove any existing tooltip
     removeTooltip();
 
     const tooltip = document.createElement('div');
     tooltip.className = 'text-improver-tooltip';
+    tooltip.setAttribute('data-action', action);
     tooltip.innerHTML = `
         <span class="close">&times;</span>
         <div class="content">${text}</div>
@@ -118,11 +119,11 @@ async function improveText(message, sendResponse) {
                 messages: [
                     {
                         role: "system",
-                        content: "You are a helpful assistant that improves text while maintaining its original meaning."
+                        content: message.systemPrompt
                     },
                     {
                         role: "user",
-                        content: `Please improve this text: ${message.text}`
+                        content: message.userPrompt
                     }
                 ],
                 temperature: 0.7,
