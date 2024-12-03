@@ -1,28 +1,33 @@
 console.log('Background script loading...');
 
-// Define prompts for different actions
-const PROMPTS = {
-    improve: {
-        system: "You are a helpful assistant that improves text while maintaining its original meaning.",
-        user: (text) => `Please improve this text while maintaining its core message: ${text}`
-    },
-    professional: {
-        system: "You are an expert in professional email writing.",
-        user: (text) => `Please convert this text into a professional email format (only the body, no headers, no placeholders, no signature): ${text}`
-    },
-    proofread: {
-        system: "You are a professional proofreader focusing on grammar, spelling, and punctuation.",
-        user: (text) => `Please proofread this text and correct any errors: ${text}`
-    },
-    toArabic: {
-        system: "You are a professional translator specializing in English to Arabic translation.",
-        user: (text) => `Please translate this text to Arabic, maintaining the tone and meaning: ${text}`
-    },
-    toEnglish: {
-        system: "You are a professional translator specializing in Arabic to English translation.",
-        user: (text) => `Please translate this text to English, maintaining the tone and meaning: ${text}`
-    }
-};
+// Load prompts from storage or use defaults
+async function getPrompts() {
+    const defaults = {
+        improve: {
+            system: "You are a helpful assistant that improves text while maintaining its original meaning.",
+            user: (text) => `Please improve this text while maintaining its core message: ${text}`
+        },
+        professional: {
+            system: "You are an expert in professional email writing.",
+            user: (text) => `Please convert this text into a professional email format (only the body, no headers, no placeholders, no signature): ${text}`
+        },
+        proofread: {
+            system: "You are a professional proofreader focusing on grammar, spelling, and punctuation.",
+            user: (text) => `Please proofread this text and correct any errors: ${text}`
+        },
+        toArabic: {
+            system: "You are a professional translator specializing in English to Arabic translation.",
+            user: (text) => `Please translate this text to Arabic, maintaining the tone and meaning: ${text}`
+        },
+        toEnglish: {
+            system: "You are a professional translator specializing in Arabic to English translation.",
+            user: (text) => `Please translate this text to English, maintaining the tone and meaning: ${text}`
+        }
+    };
+
+    const stored = await chrome.storage.local.get('prompts');
+    return stored.prompts || defaults;
+}
 
 // Create context menu items
 function createContextMenu() {
@@ -114,7 +119,8 @@ chrome.contextMenus.onClicked.addListener(async (info, tab) => {
             }
 
             // Get the appropriate prompt
-            const prompt = PROMPTS[info.menuItemId];
+            const prompts = await getPrompts();
+            const prompt = prompts[info.menuItemId];
             if (!prompt) {
                 throw new Error('Invalid action selected');
             }
