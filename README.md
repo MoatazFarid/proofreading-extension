@@ -17,12 +17,17 @@ A Chrome extension that uses OpenAI's GPT-3.5 to enhance text with multiple impr
   - Replace original text
   - Color-coded actions
 - Secure API key storage
+- Customizable prompts for each action
 - Rate limiting to prevent excessive API usage
 - Floating, draggable tooltip interface
 - Copy to clipboard functionality
 - Replace original text option
 - Dark mode support
 - Responsive and accessible design
+
+## About
+
+Developed by [Moataz Farid](https://linkedin.com/in/moatazfarid). This extension aims to provide a seamless text enhancement experience using the power of OpenAI's GPT models.
 
 ## Installation
 
@@ -33,12 +38,13 @@ A Chrome extension that uses OpenAI's GPT-3.5 to enhance text with multiple impr
 3. Enable "Developer mode" in the top right
 4. Click "Load unpacked" and select the downloaded extension folder
 5. Configure your OpenAI API key in the extension options
+6. Optionally customize the prompts for each action
 
 ### For Developers
 
 ```bash
 # Clone the repository
-git clone https://github.com/yourusername/text-improver-extension.git
+git clone https://github.com/MoatazFarid/text-improver-extension
 
 # Navigate to project directory
 cd text-improver-extension
@@ -57,7 +63,18 @@ Then load the `dist` folder as an unpacked extension in Chrome.
 1. Click the extension icon in Chrome
 2. Go to Options (or right-click the icon and select "Options")
 3. Enter your OpenAI API key
-4. Click Save
+4. Customize prompts if desired
+5. Click Save
+
+### Default Prompts
+
+The extension comes with carefully crafted default prompts for each action:
+- **Improve Text**: Enhances text while maintaining original meaning
+- **Email Conversion**: Transforms text into professional email format
+- **Proofreading**: Focuses on grammar, spelling, and punctuation
+- **Translation**: Maintains tone and meaning during translation
+
+You can customize these prompts in the options page to better suit your needs.
 
 ## Usage
 
@@ -152,9 +169,9 @@ npm test:coverage
 ## Contributing
 
 1. Fork the repository
-2. Create your feature branch (`git checkout -b MoatazFarid/proofreading-extension`)
+2. Create your feature branch (`git checkout -b MoatazFarid/text-improver-extension`)
 3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
-4. Push to the branch (`git push origin MoatazFarid/proofreading-extension`)
+4. Push to the branch (`git push origin MoatazFarid/text-improver-extension`)
 5. Open a Pull Request
 
 ## Browser Support
