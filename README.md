@@ -1,5 +1,7 @@
 # Text Improver Chrome Extension
 
+![Test and Build](https://github.com/MoatazFarid/text-improver-extension/workflows/Test%20and%20Build/badge.svg)
+
 A Chrome extension that uses OpenAI's GPT-3.5 to enhance text with multiple improvement options.
 
 ## Features
